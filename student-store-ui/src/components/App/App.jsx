@@ -6,11 +6,10 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-let productObject = {
-  itemId: 0,
-  quantity: 0,
-};
+const productObject = {};
 
 export default function App() {
   const [products, setProducts] = React.useState([]);
@@ -18,12 +17,31 @@ export default function App() {
   const [error, setError] = React.useState("");
   const [isOpen, setIsOpen] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([]);
+  const [checkoutForm, setcheckoutForm] = React.useState(false);
 
   const handleOnToggle = () => {};
-  const handleAddItemToCart = () => {};
-  const handleRemoveItemFromCart = () => {};
+  const handleAddItemToCart = (item) => {};
+  const handleRemoveItemFromCart = (item) => {};
+  const handleGetItemQuantity = (item) => {}
   const handleOnCheckoutFormChange = () => {};
   const handleOnSubmitCheckoutForm = () => {};
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setIsFetching(true);
+      try {
+        const startingProduct = await axios.get(
+          "https://codepath-store-api.herokuapp.com/store"
+        );
+      } catch (error) {
+        console.log(error);
+        setError(error);
+      } finally {
+        setIsFetching(false)
+      }
+    };
+    fetchProducts();
+  }, []);
 
   return (
     <div className="app">
