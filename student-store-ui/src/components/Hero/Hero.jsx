@@ -3,8 +3,9 @@ import "./Hero.css"
 
 export default function Hero() {
   return (
-    <div className="Hero">
-      <p>Hero</p>
+    <div className="hero">
+        <p className="intro">Welcome!</p>
+        <img className="hero-img"></img>
     </div>
   )
 }

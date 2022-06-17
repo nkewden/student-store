@@ -1,0 +1,32 @@
+.content {
+    max-width: var(--content-width);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    background: var(--pure-white);
+}
+
+.content .top {
+    flex: 1;
+    padding-top: 40px;
+}
+
+.content .top .links {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.content .top .links .link-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 5px;
+    font: 200;
+}
