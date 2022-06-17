@@ -58,12 +58,7 @@ export default function App() {
       } else {
         id.quantity++;
       }
-      //products.map((item) => {
-      //if (item == id.itemId){
-      //totalPrice += item.price * id.quantity;
-      //console.log("total Price:" + totalPrice);
-      //}
-      //})
+      
     });
   };
 
