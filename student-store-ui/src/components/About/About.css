@@ -1,6 +1,5 @@
 p { color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
 
-.heading { font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 600; line-height: 36px; margin: 0 0 24px; text-align: left; }
 .about-texts {
     justify-content: center;
     background-color: #ffffff;
@@ -17,7 +16,7 @@ p { color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-wei
 
 
 
-.codepath-logo {
+img {
     background: rgb(44, 64, 71);
     width: 600px;
     height: 400px;
@@ -29,7 +28,7 @@ p { color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-wei
 
 }
 
-.logo-about, .codepath-logo {
+.logo-about, img {
     display: flex;
     justify-content: center;
     align-items: center;
