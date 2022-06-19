@@ -16,7 +16,7 @@ export default function Home(props) {
       handleRemoveItemFromCart={props.handleRemoveItemFromCart} />
 
 
-
+      <About />
       <Contact />
       <Footer />
 

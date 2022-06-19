@@ -1,40 +1,52 @@
-.about .content {
-    margin-left: 50px;
-    max-width: var(--content-width);
-    width: 100%;
-    margin: 0 auto;
+p { color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
+
+.heading { font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 600; line-height: 36px; margin: 0 0 24px; text-align: left; }
+.about-texts {
+    justify-content: center;
+    background-color: #ffffff;
+    width: 600px;
+    height: 400px;
+
+}
+.about-text1, .about-text2, .about-text3 {
+    margin-left: 5%;
+    margin-top: 8%;
+    margin-right: 5%;
+
+}
+
+
+
+.codepath-logo {
+    background: rgb(44, 64, 71);
+    width: 600px;
+    height: 400px;
+}
+
+.logo-about {
+    width: 300px;;
+    height: 300px;
+
+}
+
+.logo-about, .codepath-logo {
     display: flex;
-    flex-direction: column;
-    min-height: 350px;
+    justify-content: center;
+    align-items: center;
 }
 
-.about .content h3 {
-    margin: 10px 0 30px;
-    font-size: 24px;
-    font-weight: 600;
+
+
+.about-container, .heading {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
-.about .content .summary {
-    display: flex;
-    flex-direction: row;
-    background: white;
-    height: 330px;
-    border: solid 1px #e0e0e0;
+.About {
+    margin-top: 1%;
 }
-
-.about .content .summary .text {
-    align-items: flex-start;
-    padding: 28px 36px;
-    color: var(--font-light);
-}
-
-.about .content .summary .text p {
-    color: var(--font-light);
-    margin-bottom: 18px;
-    font-size: 18px;
-}
-
-img {
-    background: var(--dark-blue);
-    height: 329px;
+.heading {
+    margin-bottom: 5%;
 }
