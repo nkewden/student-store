@@ -2,7 +2,6 @@ import "./Searchbar.css"
 import { useState } from "react"
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GiMagnifyingGlass } from "react-icons/gi";
-import Home from "../Home/Home";
 
 
 
@@ -31,6 +30,7 @@ export default function SearchBar(props){
     
 
     return(
+
         <div className="search-input">
             <input id="search" type="text" placeholder="Search products" onChange={(e) => props.setSearchInput(e.target.value)} value={searchInput} className="textbox" />
 
