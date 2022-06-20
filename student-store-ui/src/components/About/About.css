@@ -7,32 +7,30 @@ p { color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-wei
     height: 400px;
 
 }
-.about-text1, .about-text2, .about-text3 {
+.about-text{
     margin-left: 5%;
-    margin-top: 8%;
+    margin-top: 5%;
     margin-right: 5%;
 
 }
 
+.about-header{
+    margin-left: 25px;
+    font-size: 24px;
+    font-weight: 600;
+    display:flex;
+}
 
 
-img {
+.logoPic {
     background: rgb(44, 64, 71);
-    width: 600px;
+    width: 500px;
     height: 400px;
-}
-
-.logo-about {
-    width: 300px;;
-    height: 300px;
-
-}
-
-.logo-about, img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 
 

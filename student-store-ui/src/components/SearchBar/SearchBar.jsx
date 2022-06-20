@@ -1,9 +1,8 @@
 import "./Searchbar.css"
 import { useState } from "react"
-
 import { AiOutlineShoppingCart } from "react-icons/ai";
-
 import { GiMagnifyingGlass } from "react-icons/gi";
+import Home from "../Home/Home";
 
 
 
@@ -15,9 +14,7 @@ export default function SearchBar(props){
     //state variables
     const [searchInput, setSearchInput] = useState("");
     //searchBar function
-    const searchBar=()=>{
-        
-    }
+    // const searchBar = searchInput != "" ? props.product.filter(product) = >
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -30,18 +27,23 @@ export default function SearchBar(props){
       });
     }
 
+
+    
+
     return(
         <div className="search-input">
-          <form>
-            <input id="search" type="text" placeholder="Search products" onChange={handleChange} value={searchInput} className="textbox" /><button id="search-btn" className=""> <GiMagnifyingGlass /> </button>
-            
-          </form>
-          <div>
-            
+            <input id="search" type="text" placeholder="Search products" onChange={(e) => props.setSearchInput(e.target.value)} value={searchInput} className="textbox" />
 
-          <button id="cart" className="cart-btn">My Cart <AiOutlineShoppingCart className="cart-icon"/> </button>
-          
-          </div>
+
+
+            <div className="catergories">
+              <button className="all" onClick={(e) => {<Home />}}>All Catergories</button>
+              <button className="clothing" onClick={(e) => {setSearchInput()}}>Clothing</button>
+              <button className="food" onClick={(e) => {setSearchInput(e.target.catergory)}}>Food</button>
+              <button className="accessoriesll" onClick={(e) => {setSearchInput(e.target.catergory)}}>Accessories</button>
+              <button className="tech" onClick={(e) => {setSearchInput(e.target.catergory)}}>Tech</button>
+            </div>
+            
         </div>
     )
 }
