@@ -1,6 +1,13 @@
 import "./Searchbar.css"
 import { useState } from "react"
 
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
+import { GiMagnifyingGlass } from "react-icons/gi";
+
+
+
+
 export default function SearchBar(props){
     //prop variables
     const {products} = props;
@@ -25,7 +32,16 @@ export default function SearchBar(props){
 
     return(
         <div className="search-input">
-        <input type="text" placeholder="Search products" onChange={handleChange} value={searchInput} className="textbox" />
+          <form>
+            <input id="search" type="text" placeholder="Search products" onChange={handleChange} value={searchInput} className="textbox" /><button id="search-btn" className=""> <GiMagnifyingGlass /> </button>
+            
+          </form>
+          <div>
+            
+
+          <button id="cart" className="cart-btn">My Cart <AiOutlineShoppingCart className="cart-icon"/> </button>
+          
+          </div>
         </div>
     )
 }
