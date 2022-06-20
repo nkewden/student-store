@@ -38,10 +38,10 @@ export default function SearchBar(props){
 
             <div className="catergories">
               <button className="all" onClick={(e) => {<Home />}}>All Catergories</button>
-              <button className="clothing" onClick={(e) => {setSearchInput()}}>Clothing</button>
-              <button className="food" onClick={(e) => {setSearchInput(e.target.catergory)}}>Food</button>
-              <button className="accessoriesll" onClick={(e) => {setSearchInput(e.target.catergory)}}>Accessories</button>
-              <button className="tech" onClick={(e) => {setSearchInput(e.target.catergory)}}>Tech</button>
+              <button className="clothing" onClick={(e) => {setSearchInput(e.target.id)}}>Clothing</button>
+              <button className="food" onClick={(e) => {setSearchInput(e.target.id)}}>Food</button>
+              <button className="accessoriesll" onClick={(e) => {setSearchInput(e.target.id)}}>Accessories</button>
+              <button className="tech" onClick={(e) => {setSearchInput(e.target.id)}}>Tech</button>
             </div>
             
         </div>
