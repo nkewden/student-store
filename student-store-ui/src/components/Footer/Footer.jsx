@@ -51,6 +51,22 @@ export default function Footer() {
         </span>
         
       </div>
+      <div className = "payment-logos">
+        <ul className = "payment-list">
+          <li className = "pay-logo">
+            <i className="fa-brands fa-cc-paypal fa-xl"></i>
+          </li>
+          <li className = "pay-logo">
+            <i className="fa-brands fa-cc-visa fa-xl"></i>
+          </li>
+          <li className = "pay-logo">
+            <i className="fa-brands fa-cc-mastercard fa-xl"></i>
+          </li>
+          <li className = "pay-logo">
+            <i className="fa-brands fa-cc-discover fa-xl"></i>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }

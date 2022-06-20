@@ -4,7 +4,7 @@ import "./ProductView.css"
 export default function ProductView() {
   return (
     <div className="product-view">
-      <p>ProductView</p>
+      <p>Product View</p>
     </div>
   )
 }

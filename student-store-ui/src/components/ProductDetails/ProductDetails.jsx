@@ -1,15 +1,16 @@
-import * as React from "react";
-import "./ProductDetails.css";
+import * as React from "react"
+import "./ProductDetail.css"
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
-export default function ProductDetails(props) {
-  const [currentProduct, setCurrentProduct] = useState(null);
-  const productId = useParams();
-
+export default function ProductDetail(props) {
+  //states
+  const [product, setProduct] = React.useState({});
+  const {productId} = useParams(0);
+  
   return (
     <div className="product-detail">
-      <p>ProductDetails</p>
+      <p>Product Detail</p>
     </div>
-  );
+  )
 }

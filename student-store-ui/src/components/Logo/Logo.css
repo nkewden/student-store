@@ -1,5 +1,5 @@
-img .logo {
-    height: 10px;
-    width: 10px;
+img {
+    height: 50%;
+    width: auto;
     object-fit: contain;
 }
