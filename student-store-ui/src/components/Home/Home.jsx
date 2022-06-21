@@ -8,10 +8,14 @@ import SearchBar from "../SearchBar/SearchBar"
 import About from "../About/About"
 
 export default function Home(props) {
+  const {products} = props;
+  const {handleAddItemToCart} = props;
+  const {handleRemoveItemFromCart} = props;
+  
   return (
     <div className="home">
       <Hero />
-      <SearchBar />
+      <SearchBar products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />
       <ProductGrid products={props.products} handleAddItemToCart={props.handleAddItemToCart} 
       handleRemoveItemFromCart={props.handleRemoveItemFromCart} />
 
