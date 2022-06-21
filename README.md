@@ -8,6 +8,30 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 ### Application Features
 
+
+
+### Reflection
+
+- Did the topics in your labs prepare you to complete the assigment? Be specific, which features in your weekly assigment did you feel unprepared to complete?
+
+The twitter lab was excellent preparation for this week's project because of the components. In the twitter lab, we had a component for every portion which was similar design for 
+the student store. I wasn't prepared for connecting all the components together to make them function as one. Although it was my first time using REACT, I'm sure it was a bit easier with more practice. 
+
+
+-  If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc?
+
+If I had more time, I would differently add more features. With the API we used, we had limited items in the store and I would've loved to use more things that 
+a visitor would've liked to buy. I would've also added the stretch feature like the - and + on the items. 
+
+
+- Reflect on your project, what went well? were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+The collaboration I had with my team went well because whenever I or a peer got stuck, we would work together as a team to come up with a solution. This is important because
+we all felt included and not to be afraid to as questions. At the beginning of the project, the direction of the project was not clear. My team as well as others worked on other things not required this week. It would've been a lot better if the direction was clear from the start. 
+
+
+Link to walkthrough: https://imgur.com/L9L8iFw 
+
 #### Core Features
 
 - [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
