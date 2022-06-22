@@ -14,25 +14,6 @@ https://user-images.githubusercontent.com/99931474/175128140-dec1107d-b6a7-43bc-
 
 
 
-### Reflection
-
-- Did the topics in your labs prepare you to complete the assigment? Be specific, which features in your weekly assigment did you feel unprepared to complete?
-
-The twitter lab was excellent preparation for this week's project because of the components. In the twitter lab, we had a component for every portion which was similar design for 
-the student store. I wasn't prepared for connecting all the components together to make them function as one. Although it was my first time using REACT, I'm sure it was a bit easier with more practice. 
-
-
--  If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc?
-
-If I had more time, I would differently add more features. With the API we used, we had limited items in the store and I would've loved to use more things that 
-a visitor would've liked to buy. I would've also added the stretch feature like the - and + on the items. 
-
-
-- Reflect on your project, what went well? were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
-
-The collaboration I had with my team went well because whenever I or a peer got stuck, we would work together as a team to come up with a solution. This is important because
-we all felt included and not to be afraid to as questions. At the beginning of the project, the direction of the project was not clear. My team as well as others worked on other things not required this week. It would've been a lot better if the direction was clear from the start. 
-
 
 #### Core Features
 
@@ -87,34 +68,34 @@ The following specifications were met on the Express backend and the React front
     - [x] When the request completes successfully, it should store the `products` returned by the response in state.
     - [x] If the request does not complete successfully, or there are no `products` found in the response,
             it should create an error message and store it in the `error` state variable.
-  - [ ] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
+  - [x] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
     - [ ] Define as many as are needed.
     - [ ] At minimum, **create these five handlers**:
-      - [ ] The **`handleOnToggle`** function. When called...
-        - [ ] It should toggle the open/closed state of the `Sidebar`.
-      - [ ] The **`handleAddItemToCart`** function. When called...
-        - [ ] It should accept a single argument - `productId`
-        - [ ] It should add that product to the `shoppingCart` if it doesn't exist, and set its quantity to `1`.
-        - [ ] If it does exist, it should increase the quantity by `1`.
-        - [ ] It should add the price of the product to the total price of the `shoppingCart`.
-      - [ ] The **`handleRemoveItemFromCart`** function. When called...
-        - [ ] It should accept a single argument - `productId`
-        - [ ] It should decrease the quantity of the item in the `shoppingCart` by `1`, but only if it already exists.
-        - [ ] If it doesn't exist, the function should do nothing.
-        - [ ] If the new quantity is `0`, it should remove the item from the `shoppingCart`
-      - [ ] The **`handleOnCheckoutFormChange`** function. When called...
-        - [ ] It should receive two arguments:
-          - [ ] `name` - the `name` attribute of the input being updated
-          - [ ] `value` - the new value to set for that input
-        - [ ] It should update the `checkoutForm` object with the new value from the correct input(s)
-      - [ ] The **`handleOnSubmitCheckoutForm`** function. When called...
-        - [ ] It should submit the user's order to the API
-        - [ ] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
-        - [ ] The body of that `POST` request should be an object with two fields:
-          - [ ] The `user` field:
-            - [ ] Should be an object containing `name` and `email` properties
-            - [ ] Each property should be set to the correct value found in the `checkoutForm`
-          - [ ] The `shoppingCart` field:
+      - [x] The **`handleOnToggle`** function. When called...
+        - [x] It should toggle the open/closed state of the `Sidebar`.
+      - [x] The **`handleAddItemToCart`** function. When called...
+        - [x] It should accept a single argument - `productId`
+        - [x] It should add that product to the `shoppingCart` if it doesn't exist, and set its quantity to `1`.
+        - [x] If it does exist, it should increase the quantity by `1`.
+        - [x] It should add the price of the product to the total price of the `shoppingCart`.
+      - [x] The **`handleRemoveItemFromCart`** function. When called...
+        - [x] It should accept a single argument - `productId`
+        - [x] It should decrease the quantity of the item in the `shoppingCart` by `1`, but only if it already exists.
+        - [x] If it doesn't exist, the function should do nothing.
+        - [x] If the new quantity is `0`, it should remove the item from the `shoppingCart`
+      - [x] The **`handleOnCheckoutFormChange`** function. When called...
+        - [x] It should receive two arguments:
+          - [x] `name` - the `name` attribute of the input being updated
+          - [x] `value` - the new value to set for that input
+        - [x] It should update the `checkoutForm` object with the new value from the correct input(s)
+      - [x] The **`handleOnSubmitCheckoutForm`** function. When called...
+        - [x] It should submit the user's order to the API
+        - [x] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
+        - [x] The body of that `POST` request should be an object with two fields:
+          - [x] The `user` field:
+            - [x] Should be an object containing `name` and `email` properties
+            - [x] Each property should be set to the correct value found in the `checkoutForm`
+          - [x] The `shoppingCart` field:
             - [ ] Should contain the user's order formatted as an array of objects.
             - [ ] Each object in the array should have two fields:
               - [ ] The `itemId` field should store the `id` of the item being purchased.
@@ -123,29 +104,29 @@ The following specifications were met on the Express backend and the React front
 
 **Navbar.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
-  - [ ] Should render the `Logo` component that links to the `/` route when clicked
+  - [x] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
+  - [x] Should render the `Logo` component that links to the `/` route when clicked
 
 **Logo.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
-  - [ ] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
+  - [x] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
 
 **Home.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `home`
-  - [ ] Should accept **at least** the following props:
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `home`
+  - [x] Should accept **at least** the following props:
     - `products` - an array of product objects
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
-  - [ ] Should render the `Hero` component
-  - [ ] Should render the `ProductGrid` component
+  - [x] Should render the `Hero` component
+  - [x] Should render the `ProductGrid` component
 
 **Hero.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `hero`
-  - [ ] Should display an intro message inside an element with the `className` of `intro`. That message should contain the text `"Welcome!"` somewhere within it.
-  - [ ] Should render a hero image inside an `img` tag with the `className` of `hero-img`.
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `hero`
+  - [x] Should display an intro message inside an element with the `className` of `intro`. That message should contain the text `"Welcome!"` somewhere within it.
+  - [x] Should render a hero image inside an `img` tag with the `className` of `hero-img`.
 
 **ProductGrid.jsx**
 
@@ -154,11 +135,11 @@ The following specifications were met on the Express backend and the React front
     - `products` - an array of product objects
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
-  - [ ] Should iterate over its `products` prop, rendering a `ProductCard` component for each one. Set the `showDescription` prop to `false` for all of the `ProductCard` components rendered in the `ProductGrid` component.
+  - [x] Should iterate over its `products` prop, rendering a `ProductCard` component for each one. Set the `showDescription` prop to `false` for all of the `ProductCard` components rendered in the `ProductGrid` component.
 
 **ProductDetail.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-detail`
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `product-detail`
   - [ ] Should accept **at least** the following props:
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
@@ -185,7 +166,7 @@ The following specifications were met on the Express backend and the React front
 
 **ProductCard.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-card`
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `product-card`
   - [ ] Should accept **at least** the following props:
     - `product` - a product object
     - `productId` - a `number` representing the `id` of the product
@@ -196,8 +177,8 @@ The following specifications were met on the Express backend and the React front
   - [ ] Should render the `name` of the product inside an element with the `className` of `product-name`
   - [ ] Should render the `price` of the product inside an element with the `className` of `product-price`. The price should formatted so that it starts with a `$`, and has **at least one** integer digit, along with **exactly two** decimal digits. Examples - `$22.99`, `$860.20`, and `$0.50`
   - [ ] If the `showDescription` prop is set to `true`, it should render the `description` of the product inside an element with the `className` of `product-description`.
-  - [ ] Should render an `img` element for the product:
-    - [ ] The `img` element should have a `src` attribute to set to the `image` property of the `product` prop.
+  - [x] Should render an `img` element for the product:
+    - [x] The `img` element should have a `src` attribute to set to the `image` property of the `product` prop.
     - [ ] The `img` element should be wrapped in a `Link` component from `react-router-dom`.
       - [ ] The `Link` element should have a `to` prop so that when the `img` element is clicked on, it should navigate to the product detail route for that product using its `id` attribute. For example, a product with an `id` of `4` should create a `Link` with its `to` prop set to `/products/4`.
       - [ ] The `Link` that wraps the `img` element should be nested somewhere inside an element with the `className` of `media`.
@@ -208,7 +189,7 @@ The following specifications were met on the Express backend and the React front
 
 **Sidebar.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `section` element with the `className` of `sidebar`
+  - [x] Should render JSX that is wrapped by a `section` element with the `className` of `sidebar`
   - [ ] Should accept **at least** the following props (and probably a few more):
     - `isOpen` - boolean representing the open/closed state of the Sidebar
     - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
@@ -217,19 +198,19 @@ The following specifications were met on the Express backend and the React front
     - `handleOnCheckoutFormChange` - handler function to update the `checkoutForm` object
     - `handleOnSubmitCheckoutForm` - handler function to submit the user's order to the API
     - `handleOnToggle` - handler function to toggle open/closed `Sidebar` state
-  - [ ] It should always render a `button` element with the `className` of `toggle-button`. When that button is clicked it should change the `isOpen` prop by calling the `handleOnToggle` prop.
+  - [x] It should always render a `button` element with the `className` of `toggle-button`. When that button is clicked it should change the `isOpen` prop by calling the `handleOnToggle` prop.
   - [ ] When the sidebar is opened, it should display the `ShoppingCart` and `CheckoutForm` components and should be wider than `350px`.
   - [ ] When the sidebar is closed, it should only render the toggle button and shouldn't be wider than `150px`.
 
 **ShoppingCart.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
+  - [x] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
   - [ ] Should accept **at least** the following props (and probably a few more):
     - `isOpen` - boolean representing the open/closed state of the Sidebar
     - `products` - the array of products fetched from the API
     - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
-  - [ ] For every item in the `shoppingCart`:
-    - [ ] It should display the `name` of the item in an element with the `className` of `cart-product-name`. Remember that items in the `shoppingCart` prop will **only** contain the `itemId` and `quantity` fields. Other props will have to be used to conver the `itemId` field to the `product`'s name.
+  - [x] For every item in the `shoppingCart`:
+    - [x] It should display the `name` of the item in an element with the `className` of `cart-product-name`. Remember that items in the `shoppingCart` prop will **only** contain the `itemId` and `quantity` fields. Other props will have to be used to conver the `itemId` field to the `product`'s name.
     - [ ] It should display the `quantity` of the item in an element with the `className` of `cart-product-quantity`
   - [ ] It add up the cost of all items (make sure to use the quantity of the item requested), and render that amount **rounded up to exactly 2 decimal places** inside an element with the `className` of `subtotal`. Make sure it is prefixed with a dollar sign ($)!
   - [ ] It should calculate the cost of taxes on that subtotal (using 8.75% as the tax rate), add that amount to the subtotal, and render the total cost **rounded up to exactly 2 decimal places** inside an element with the `className` of `total-price`. Make sure it is prefixed with a dollar sign ($)!
@@ -304,3 +285,24 @@ The following specifications were met on the Express backend and the React front
         - **optional**:
           - [ ] `receipt` - text describing the order (what might go on a receipt)
       - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+
+
+
+### Reflection
+
+- Did the topics in your labs prepare you to complete the assigment? Be specific, which features in your weekly assigment did you feel unprepared to complete?
+
+The twitter lab was excellent preparation for this week's project because of the components. In the twitter lab, we had a component for every portion which was similar design for 
+the student store. I wasn't prepared for connecting all the components together to make them function as one. Although it was my first time using REACT, I'm sure it was a bit easier with more practice. 
+
+
+-  If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc?
+
+If I had more time, I would differently add more features. With the API we used, we had limited items in the store and I would've loved to use more things that 
+a visitor would've liked to buy. I would've also added the stretch feature like the - and + on the items. 
+
+
+- Reflect on your project, what went well? were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+The collaboration I had with my team went well because whenever I or a peer got stuck, we would work together as a team to come up with a solution. This is important because
+we all felt included and not to be afraid to as questions. At the beginning of the project, the direction of the project was not clear. My team as well as others worked on other things not required this week. It would've been a lot better if the direction was clear from the start. 
