@@ -5,6 +5,7 @@
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
 // Include your gif here
+Link to walkthrough: https://imgur.com/L9L8iFw 
 
 ### Application Features
 
@@ -30,12 +31,10 @@ The collaboration I had with my team went well because whenever I or a peer got 
 we all felt included and not to be afraid to as questions. At the beginning of the project, the direction of the project was not clear. My team as well as others worked on other things not required this week. It would've been a lot better if the direction was clear from the start. 
 
 
-Link to walkthrough: https://imgur.com/L9L8iFw 
-
 #### Core Features
 
-- [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
-- [ ] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
+- [x] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
+- [x] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
 - [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [ ] User can search for products.
 - [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
