@@ -12,13 +12,10 @@ const [filteredData, setFilteredData] = useState([]);
 //prop variables
 const {products} = props;
 const {searched} = props;    
-console.log(props)
 //const {searched} = props;
 const handleOnChange = (e) => {
-    console.log(12,e.target.value);
     setSearchInput(e.target.value);
     getFilteredItems(searchInput, products);
-    console.log(35, filteredData);
     if (e.target.value==''){
         setSearchedActive(false);
     }else{
@@ -31,26 +28,20 @@ const getFilteredItems = (searchInput, products) => {
         return products;
     }
     const data = products.filter((product) => product.name.toLowerCase().includes(searchInput.toLowerCase()));
-    console.log(15, data);
     setFilteredData(data);
     // setSearched(true);
-    console.log(16,filteredData);
-    console.log(30,products.filter((product) => product.name.toLowerCase().includes(searchInput.toLowerCase())));
     return filteredData;
 }
 
 const returnProducts = () => {
-    console.log(111,searchedActive);
     if (searchedActive === false) {
-        console.log("does this work?");
         return(props.products.map((product, i) => { 
-            return (<ProductCard className="productCard" key={i} name={product.name}
+            return (<ProductCard className="productCard" key={i} name={product.name} idx={product.id}
             price={product.price} pic={product.image}/> )
         }))
     }else if (searchedActive === true){
-        console.log(1113,"does this work?");
         return(filteredData.map((product, i) => { 
-            return (<ProductCard className="productCard" key={i} name={product.name}
+            return (<ProductCard className="productCard" key={i} name={product.name} idx={product.id}
             price={product.price} pic={product.image}/> )
         }))
     }
@@ -58,11 +49,10 @@ const returnProducts = () => {
   
     return (
       <div className="productGrid" id="buy">
-      <div className="search-input">
-      <input type="text" placeholder="Search products" onChange={handleOnChange} value={searchInput} className="textbox" />
+        <div className="search-input">
+            <input type="text" placeholder="Search products" onChange={handleOnChange} value={searchInput} className="textbox" />
       </div>
       <div className="content"><h1>Best Selling Products</h1>
-        {console.log(props.products)}
         <div className="grid" >
         {returnProducts()}
         </div>

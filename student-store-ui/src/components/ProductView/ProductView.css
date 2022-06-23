@@ -1,0 +1,22 @@
+.productView {
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+ 
+
+}
+
+.productPoster {
+    width: 600px;
+    height: 400px;
+    border-radius: 5px;
+}
+
+.product {
+    display: inline-block;
+    justify-content: center;
+    padding: 10%;
+    padding-bottom: 0;
+
+}
+

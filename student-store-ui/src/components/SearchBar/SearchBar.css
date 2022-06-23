@@ -7,7 +7,7 @@
     border-radius: 10px;
 }
 
-/* #search, #search-btn {
+#search, #search-btn {
     display: inline-block;
   outline: 0;
   border: 0;
@@ -23,4 +23,4 @@
 
 .cart-icon {
     width: 200px;
-} */
+}

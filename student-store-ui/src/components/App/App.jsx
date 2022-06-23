@@ -22,18 +22,18 @@ export default function App() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([shoppingCartObject]);
   const [checkoutForm, submitCheckoutForm] = React.useState({});
+  const [selectedCategory, setSelectedCategory] = useState("All Categories")
+
+
   useEffect(() => {
     // Update the document title using the browser API
-
     const fetchProducts = async() => {
       setIsFetching(true)
       try {
         const startingProducts = await axios.get("https://codepath-store-api.herokuapp.com/store")
         setProducts(startingProducts.data.products)
-        console.log(products)
         //console.log(startingProducts.data.products)
       } catch (error) {
-        console.log(error)
         setError(error)
       }
       finally{
@@ -43,6 +43,7 @@ export default function App() {
     fetchProducts()
   },[])
 
+
   const handleOnToggle = () => {
     if(isOpen == false){
       setIsOpen(true)
@@ -51,6 +52,7 @@ export default function App() {
       setIsOpen(false)
     }
    }
+
    const handleAddItemToCart = (productId) => {
     shoppingCart.map((id) => {
       if (id.itemId != productId){
@@ -77,18 +79,18 @@ export default function App() {
       }
     }));
   }
+
   const handleOnCheckoutFormChange = (name, value) => {
     setCheckoutForm({name, value});
   }
+
   const handleOnSubmitCheckoutForm = () => {
     axios.post("https://codepath-store-api.herokuapp.com/store",{
       user:{name: checkoutForm.name, email: checkoutForm.value}, shoppingCart
     })
     .then(function(response){
-      console.log(response);
     })
     .catch(function(error){
-      console.log(error);
     })
   }
 
@@ -98,15 +100,13 @@ export default function App() {
         <main>
           {
             <Routes>
-              <Route path="/" element={(
-                <>
-                  <Navbar />
-                  <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart}/>
+              <Route path="/" element={(<> <Navbar />
+                  <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory}/>
                   <Sidebar />
                 </>
               )}   
               />
-              <Route path="/products/:productsId" element={(
+              <Route path="/products/:productId" element={(
                 <>
                   <Navbar />
                   <ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart}/>
