@@ -1,7 +1,7 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     width: 100%;
     flex: 1;
     transition: all .2s cubic-bezier(.215, .61, .355, 1);
@@ -19,7 +19,7 @@
 .sidebar .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     width: 100%;
 }
 
@@ -33,16 +33,16 @@
 
 .shopping-cart {
     width: 100%;
-    color: #fff;
+    align-items: center;
+
 }
 
 .shopping-cart .cart-icons {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     margin-top: 50px;
-    width: 100%;
-    padding-left: .5rem;
+    padding-left: 1rem;
 }
 
 .shopping-cart .cart-icon {
@@ -55,9 +55,8 @@
 
 .sidebar.open {
     width: 600px;
-    align-items: left;
-    justify-content: left;
-    margin-right: 70%;
+    align-items: center;
+    justify-content: top;
 }
 
 i,

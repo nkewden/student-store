@@ -17,7 +17,6 @@ export default function ProductView(props) {
                 <p className = "productDescription">{props.product.description}</p>
                 <p className = "productPrice">Price: ${price}</p>
             </div>
-
         </div>
     </div>
   )

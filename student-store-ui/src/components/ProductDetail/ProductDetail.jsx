@@ -7,7 +7,7 @@ import axios from "axios"
 
 export default function ProductDetail(props) {
   //states
-  const [product, setProduct] = React.useState({});
+  const [product, setProduct] = useState({});
   const {productId} = useParams();
 
 
