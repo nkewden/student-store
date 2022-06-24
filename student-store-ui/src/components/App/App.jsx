@@ -1,14 +1,14 @@
 import * as React from "react"
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
-import Home from "../Home/Home"
-import "./App.css"
-import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import ProductDetail from "../ProductDetail/ProductDetail"
-import NotFound from "../NotFound/NotFound"
-import axios from "axios"
+import Home from "../Home/Home"
+import Contact from "../Contact/Contact"
+import Searchbar from "../SearchBar/SearchBar"
+import "./App.css"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react"
-import { MdEmojiObjects } from "react-icons/md"
+import axios from 'axios'
 
 
 export default function App() {
@@ -18,32 +18,8 @@ export default function App() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([{itemId: 0, quantity: 0}]);
   const [checkoutForm, submitCheckoutForm] = React.useState({});
-  const [selectedCategory, setSelectedCategory] = useState("All Categories")
   const [event, setEvent] = useState({})
 
-
-let categoryArr = []
-
-function handleCategories(e) {
-    let category = e.target.innerText.toLowerCase();
-    
-    categoryArr = products.filter(e => {
-      return e.category.includes(category);
-    })
-    if (categoryArr.length == 0) {
-        products.map((e) => {
-            categoryArr.push(e)
-        })
-    }
-    console.log(e)
-
-}
-
-if (Object.keys(event).length > 0) {
-  handleCategories(event)
-}
-
-console.log(categoryArr)
 
   const handleOnToggle = () => {
     if (isOpen) {
@@ -52,6 +28,7 @@ console.log(categoryArr)
       setIsOpen(true)
     }
   }
+
 
   function handleAddItemToCart (productId) {
     let found = false;
@@ -74,7 +51,7 @@ console.log(categoryArr)
 
   }
 
-  function handleRemoveItemToCart(productId) {
+  function handleRemoveItemFromCart(productId) {
     let found = false;
     let item = 0;
     shoppingCart.forEach((e) => {
@@ -112,21 +89,17 @@ console.log(categoryArr)
       user: { name: checkoutForm.name, email: checkoutForm.value }, shoppingCart
     })
       .then(function (response) {
-        console.log(response);
       })
       .catch(function (error) {
-        console.log(error);
       })
   }
 
-  // fetch products data from API via axios
+
   async function getProducts() {
     const apiUrl = "http://localhost:3001/store"
 
     await axios.get(apiUrl)
       .then((response) => {
-        console.log(`SUCCESS:!`)
-        console.log(response.data.products)
         setProducts(response.data.products)
         setIsFetching(true)
       })
@@ -135,43 +108,41 @@ console.log(categoryArr)
         setIsFetching(false)
       })
       .then(() => {
-        console.log("Finished requesting Products!")
         setIsFetching(false)
       })
   }
 
   useEffect(() => {
-    getProducts(); // call getProducts every time we render the App component
-  }, []); // [] signals getProducts is called only once on render.
-console.log(34,shoppingCart)
-
+    getProducts(); 
+  }, []); 
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {
             <Routes>
-              <Route path="/" element={(<> <Navbar />
-                  <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} handleCategories={handleCategories} categoryArr={categoryArr} setEvent={setEvent}/>
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} />
-                </>
-              )}   
-              />
-              <Route path="/products/:productId" element={(
+              <Route path="/" element={(
                 <>
                   <Navbar />
-                  <ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>
+                  <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />
                   <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} />
                 </>
-              )}   
+              )}
+              />
+              <Route path="/products/:productsId" element={(
+                <>
+                  <Navbar />
+                  <ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} />
+                </>
+              )}
               />
               <Route path="*" element={(
                 <>
                   <Navbar />
-                  <NotFound />
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle}/>
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} />
                 </>
-              )}   
+              )}
               />
             </Routes>
           }

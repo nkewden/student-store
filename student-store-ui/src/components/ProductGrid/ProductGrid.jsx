@@ -1,71 +1,159 @@
-import * as React from "react"
-import ProductCard from "../ProductCard/ProductCard"
-import "./ProductGrid.css"
+import * as React from "react";
+import ProductCard from "../ProductCard/ProductCard";
+import "./ProductGrid.css";
 import { useState, useEffect } from "react";
 
 export default function ProductGrid(props) {
 
-//state variables
-const [searchedActive, setSearchedActive] = useState(false);
-const [searchInput, setSearchInput] = useState("");
-const [filteredData, setFilteredData] = useState([]);
-const [filteredCategory, setFilteredCategory] = useState([]);
-const [filterActive, setFilterActive] = useState(false);
+  const [searchedActive, setSearchedActive] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+  const [filteredCategory, setFilteredCategory] = useState([]);
+  const [filterActive, setFilterActive] = useState(false);
 
-//prop variables
-const {products} = props;
-const {handleAddItemToCart} = props;
-const {handleRemoveItemToCart} = props;  
-//const {searched} = props;
 
-useEffect(()=>{
+  const { products } = props;
+
+
+  useEffect(() => {
     setFilteredCategory(products);
-}, []);
-//handle for category
+  }, []);
 
+  const handleCategories = (e) => {
+    let typeCategory = e.target.value;
+    typeCategory != "all categories"
+      ? setFilteredCategory(
+          products.filter((product) => {
+            if (typeCategory == product.category) {
+              return product;
+            }
+          })
+        )
+      : setFilteredCategory(products);
+    setFilterActive(true);
+  };
 
-const getFilteredItems = (searchInput, products) => {
-    if (!searchInput){
-        return products;
+  const handleOnChange = (e) => {
+    setSearchInput(e.target.value);
+    getFilteredItems(searchInput, products);
+    if (e.target.value == "") {
+      setSearchedActive(false);
+    } else {
+      setSearchedActive(true);
     }
-    const data = products.filter((product) => product.name.toLowerCase().includes(searchInput.toLowerCase()));
+  };
+  const getFilteredItems = (searchInput, products) => {
+    if (!searchInput) {
+      return products;
+    }
+    const data = products.filter((product) =>
+      product.name.toLowerCase().includes(searchInput.toLowerCase())
+    );
     setFilteredData(data);
-    // setSearched(true);
     return filteredData;
-}
+  };
 
-const returnProducts = () => {
+  const returnProducts = () => {
     if (searchedActive === false) {
-        return(props.products.map((product, i) => { 
-            return (<ProductCard className="productCard" key={i} name={product.name} idx={product.id}
-            price={product.price} pic={product.image} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemToCart={props.handleRemoveItemToCart}/> )
-        }))
-    }else if (searchedActive === true){
-        return(filteredData.map((product, i) => { 
-            return (<ProductCard className="productCard" key={i} name={product.name} idx={product.id}
-            price={product.price} pic={product.image} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemToCart={props.handleRemoveItemToCart}/> )
-        }))
+      if (filterActive) {
+        return filteredCategory.map((product, i) => {
+          return (
+            <ProductCard
+              className="productCard"
+              key={i}
+              product={product}
+              handleAddItemToCart={props.handleAddItemToCart}
+              handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+            />
+          );
+        });
+      } else {
+        return props.products.map((product, i) => {
+          return (
+            <ProductCard
+              className="productCard"
+              key={i}
+              product={product}
+              handleAddItemToCart={props.handleAddItemToCart}
+              handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+            />
+          );
+        });
+      }
+    } else if (searchedActive === true) {
+      return filteredData.map((product, i) => {
+        return (
+          <ProductCard
+            className="productCard"
+            key={i}
+            product={product}
+            handleAddItemToCart={props.handleAddItemToCart}
+            handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+          />
+        );
+      });
     }
-}
-  
-console.log(props.categoryArr)
+  };
 
-
-if (props.categoryArr.length > 0){
-        return(props.categoryArr.map((product, i) => { 
-            return (<ProductCard className="productCard" key={i} name={product.name} idx={product.id}
-            price={product.price} pic={product.image} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemToCart={props.handleRemoveItemToCart}/> )
-        }))
-} else {
-
-    return (
-      <div className="productGrid" id="buy">
-        <div className="content"><h1>Best Selling Products</h1>
-            <div className="grid" >
-                {returnProducts()}
-            </div>
-        </div>
+  return (
+    <div className="product-grid" id="buy">
+      <div className="search-input">
+        <input
+          type="text"
+          placeholder="Search products"
+          onChange={handleOnChange}
+          value={searchInput}
+          className="textbox"
+        />
       </div>
-    )
-}
+      <div className="categories">
+        <li className="active-btn">
+          <button
+            className="buttons"
+            id="all"
+            value="all categories"
+            onClick={handleCategories}
+          >
+            All Categories
+          </button>
+          <button
+            className="buttons"
+            id="clothing"
+            value="clothing"
+            onClick={handleCategories}
+          >
+            Clothing
+          </button>
+          <button
+            className="buttons"
+            id="food"
+            value="food"
+            onClick={handleCategories}
+          >
+            Food
+          </button>
+          <button
+            className="buttons"
+            id="acc"
+            value="accessories"
+            onClick={handleCategories}
+          >
+            Accessories
+          </button>
+          <button
+            className="buttons"
+            id="tech"
+            value="tech"
+            onClick={handleCategories}
+          >
+            Tech
+          </button>
+        </li>
+      </div>
+      <div className="content">
+        <h1>Best Selling Products</h1>
+        <div className="grid">{returnProducts()}</div>
+      </div>
+    </div>
+  );
 }

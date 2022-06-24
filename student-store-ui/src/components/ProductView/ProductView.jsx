@@ -1,23 +1,22 @@
-import * as React from "react"
-import "./ProductView.css"
+import ProductCard from "../ProductCard/ProductCard";
+import "./ProductView.css";
 
 export default function ProductView(props) {
-
-  let price = props.product.price
-
+  const { productId } = props;
+  const { quantity } = props;
+  const { handleAddItemToCart } = props;
+  const { handleRemoveItemToCart } = props;
   return (
-    <div className="productView">
-      <div className = "product">
-            <div className = "productHeading">
-                <h2 className = "productTitle">Product #{props.product.id}</h2>
-                <img className = "producPoster" src={props.product.image} alt="" />
-            </div>
-            <div className = "details">
-                <h5 className = "productName">{props.product.name}</h5>
-                <p className = "productDescription">{props.product.description}</p>
-                <p className = "productPrice">Price: ${price}</p>
-            </div>
-        </div>
+    <div className="product-view">
+      <h1 className="product-id">Product # {productId}</h1>
+      <ProductCard
+        className="product-card"
+        showDescription={true}
+        product={props.product}
+        quantity={quantity}
+        handleAddItemToCart={handleAddItemToCart}
+        handleRemoveItemToCart={handleRemoveItemToCart}
+      />
     </div>
-  )
+  );
 }
