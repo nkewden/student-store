@@ -100,7 +100,7 @@ export default function ProductGrid(props) {
       <div className="search-input">
         <input
           type="text"
-          placeholder="Search products"
+          placeholder="Search"
           onChange={handleOnChange}
           value={searchInput}
           className="textbox"

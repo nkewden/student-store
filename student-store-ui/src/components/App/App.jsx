@@ -85,7 +85,7 @@ export default function App() {
   }
 
   const handleOnSubmitCheckoutForm = () => {
-    axios.post("https://codepath-store-api.herokuapp.com/store", {
+    axios.post("http://localhost:3001/store", {
       user: { name: checkoutForm.name, email: checkoutForm.value }, shoppingCart
     })
       .then(function (response) {
@@ -96,9 +96,7 @@ export default function App() {
 
 
   async function getProducts() {
-    const apiUrl = "http://localhost:3001/store"
-
-    await axios.get(apiUrl)
+    await axios.get("http://localhost:3001/store")
       .then((response) => {
         setProducts(response.data.products)
         setIsFetching(true)
