@@ -15,7 +15,7 @@
     margin: 10px 5px 15px;
 }
 .product-card .media {
-    max-width: 300px;
+    max-width: 500px;
     object-fit: contain;
     border-radius: 15px 15px; 
 }
