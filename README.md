@@ -6,7 +6,14 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 // Include your gif here
 
+### Week 2 Gif
+
 https://user-images.githubusercontent.com/99931474/175128140-dec1107d-b6a7-43bc-b5f0-6e6fc2059169.mp4
+
+
+
+### Week 3 Gif
+
 
 
 
