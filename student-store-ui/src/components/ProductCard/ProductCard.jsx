@@ -13,7 +13,7 @@ export default function ProductCard(props) {
           <img className="media" src={props.product.image} alt="" />
         </Link>
         <h3 className="product-name">{props.product.name}</h3>
-        <h4>{ratingToStars(5)}</h4>
+        <h4>{ratingToStars(4)}</h4>
         <h5 className="product-price">${props.product.price.toFixed(2)}</h5>
         {showDescription == true && <h6 className="product-description">{props.product.description ? props.product.description : "No description found"}</h6>}
         <div className="product-buttons">

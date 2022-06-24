@@ -113,6 +113,7 @@ export default function App() {
   useEffect(() => {
     getProducts(); 
   }, []); 
+  
   return (
     <div className="app">
       <BrowserRouter>
