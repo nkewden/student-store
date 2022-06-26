@@ -63,7 +63,7 @@ export default function ProductGrid(props) {
               key={i}
               product={product}
               handleAddItemToCart={props.handleAddItemToCart}
-              handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+              handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}
             />
           );
         });
@@ -75,7 +75,7 @@ export default function ProductGrid(props) {
               key={i}
               product={product}
               handleAddItemToCart={props.handleAddItemToCart}
-              handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+              handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}
             />
           );
         });
@@ -88,7 +88,7 @@ export default function ProductGrid(props) {
             key={i}
             product={product}
             handleAddItemToCart={props.handleAddItemToCart}
-            handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+            handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}
           />
         );
       });

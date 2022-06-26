@@ -9,6 +9,7 @@ import "./App.css"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
 
 export default function App() {
@@ -50,6 +51,7 @@ export default function App() {
     }
 
   }
+
 
   function handleRemoveItemFromCart(productId) {
     let found = false;
@@ -123,8 +125,8 @@ export default function App() {
               <Route path="/" element={(
                 <>
                   <Navbar />
-                  <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} />
+                  <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart}/>
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products}/>
                 </>
               )}
               />
@@ -132,14 +134,14 @@ export default function App() {
                 <>
                   <Navbar />
                   <ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} />
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products}/>
                 </>
               )}
               />
               <Route path="*" element={(
                 <>
                   <Navbar />
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} />
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm}/>
                 </>
               )}
               />

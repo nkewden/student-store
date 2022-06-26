@@ -6,6 +6,21 @@ export default function ProductCard(props) {
   const {product} = props.product;
   const showDescription = props.showDescription;
 
+  let productQuantity = 0;
+
+  function quantity() {
+    props.shoppingCart.map((e) => {
+      if (e.itemId === props.product.id) {
+        productQuantity = e.quantity;
+        return 
+      }
+    })
+  }
+
+quantity()
+
+
+
 
     return (
       <div className="product-card">
@@ -19,6 +34,8 @@ export default function ProductCard(props) {
         <div className="product-buttons">
           <button id = "buttons" className="add" onClick={() => (props.handleAddItemToCart(props.product.id))}>+</button>
           <button id = "buttons" className="remove" onClick={() => (props.handleRemoveItemFromCart(props.product.id))}>-</button>
+          <h2>{productQuantity}</h2>
+          
         </div>
       </div>
     )
