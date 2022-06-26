@@ -14,8 +14,8 @@ route.post("/", async(req, res, next) => {
     const shoppingCart = req.body.shoppingCart;
     const user = req.body.user
     const purchase = store.makePurchase(shoppingCart, user)
-    
-    res.status(200).json(store.product(req.params.productId))
+
+    res.status(200).json({"purchase":purchase})
 })
 
 module.exports = route;
