@@ -6,8 +6,6 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
 export default function Sidebar(props) {
   const handleOnClick = (event) => {
-    console.log("Clicked Sidebar button!")
-    console.log(props.isOpen)
     if (!props.isOpen) {
       document.getElementById("sidebar").classList.remove("closed")
       document.getElementById("sidebar").classList.add("open")
@@ -28,7 +26,7 @@ export default function Sidebar(props) {
           {!(props.isOpen) ? <BsFillArrowRightCircleFill /> : <BsFillArrowLeftCircleFill />}
         </p></button>
         <div className="shopping-cart">
-          {props.isOpen ? <ShoppingCart /> :
+          {props.isOpen ? <ShoppingCart products={props.products}/> :
             <div className="cart-icons">
               <span className="cart-icon icon button">
                 <i className="material-icons" onClick={handleOnClick}><BsFillCartPlusFill /></i>
