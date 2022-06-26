@@ -3,9 +3,10 @@ import "./ProductView.css";
 
 export default function ProductView(props) {
   const { productId } = props;
-  const { quantity } = props;
+  // const { quantity } = props;
   const { handleAddItemToCart } = props;
-  const { handleRemoveItemToCart } = props;
+  const { handleRemoveItemFromCart } = props;
+
   return (
     <div className="product-view">
       <h1 className="product-id">Product # {productId}</h1>
@@ -13,9 +14,9 @@ export default function ProductView(props) {
         className="product-card"
         showDescription={true}
         product={props.product}
-        quantity={quantity}
         handleAddItemToCart={handleAddItemToCart}
-        handleRemoveItemToCart={handleRemoveItemToCart}
+        handleRemoveItemFromCart={handleRemoveItemFromCart}
+        shoppingCart={props.shoppingCart}
       />
     </div>
   );

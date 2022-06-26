@@ -8,14 +8,19 @@ export default function ProductCard(props) {
 
   let productQuantity = 0;
 
+
   function quantity() {
-    props.shoppingCart.map((e) => {
-      if (e.itemId === props.product.id) {
-        productQuantity = e.quantity;
-        return 
-      }
-    })
+    if (props.shoppingCart != undefined) {
+      props.shoppingCart.map((e) => {
+        if (e.itemId === props.product.id) {
+          productQuantity = e.quantity;
+        }
+      })
+    }
+    
   }
+
+
 
 quantity()
 

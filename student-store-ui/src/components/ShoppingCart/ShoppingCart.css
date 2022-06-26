@@ -1,9 +1,11 @@
 .open {
     display: flex;
-    flex-direction: column;
-
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-.text {
-    color: white;
+
+.total {
+    display: flex;
+    justify-content: space-around;
 }

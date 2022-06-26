@@ -22,11 +22,11 @@ export default function Sidebar(props) {
   return (
     <section className="sidebar closed" id="sidebar">
       <div className="wrapper" id="wrapper">
-        <button className="toggle-button button closed" onClick={handleOnClick}><p className="material-icons">
-          {!(props.isOpen) ? <BsFillArrowRightCircleFill /> : <BsFillArrowLeftCircleFill />}
-        </p></button>
+        <button className="toggle-button button closed" onClick={handleOnClick}>
+          <p className="material-icons">{!(props.isOpen) ? <BsFillArrowRightCircleFill /> : <BsFillArrowLeftCircleFill />}</p>
+        </button>
         <div className="shopping-cart">
-          {props.isOpen ? <ShoppingCart products={props.products}/> :
+          {props.isOpen ? <ShoppingCart products={props.products} shoppingCart={props.shoppingCart}/> :
             <div className="cart-icons">
               <span className="cart-icon icon button">
                 <i className="material-icons" onClick={handleOnClick}><BsFillCartPlusFill /></i>

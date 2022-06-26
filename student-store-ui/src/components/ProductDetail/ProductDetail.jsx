@@ -9,9 +9,6 @@ import ProductView from "../ProductView/ProductView"
 export default function ProductDetail(props) {
   const productId = useParams();
  
-  const {handleAddItemToCart} = props;
-  const {handleRemoveItemToCart} = props;
-
   const {products} = props;
   const [product, setProduct]=useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -34,7 +31,7 @@ export default function ProductDetail(props) {
   return (
     <div className="product-detail">
       {isLoading == true && <h1 className="loading">Loading...</h1>}
-      {product ? <ProductView product={product} productId={productId.productsId} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>:<NotFound/>}
+      {product ? <ProductView product={product} productId={productId.productsId} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}/>:<NotFound/>}
     </div>
   )
 }

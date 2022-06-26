@@ -12,6 +12,7 @@ import axios from 'axios'
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
 
+
 export default function App() {
   const [products, setProducts] = React.useState([]);
   const [isFetching, setIsFetching] = React.useState(false);
@@ -126,22 +127,22 @@ export default function App() {
                 <>
                   <Navbar />
                   <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart}/>
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products}/>
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products} shoppingCart={shoppingCart}/>
                 </>
               )}
               />
               <Route path="/products/:productsId" element={(
                 <>
                   <Navbar />
-                  <ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products}/>
+                  <ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart}/>
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products} shoppingCart={shoppingCart}/>
                 </>
               )}
               />
               <Route path="*" element={(
                 <>
                   <Navbar />
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm}/>
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} shoppingCart={shoppingCart}/>
                 </>
               )}
               />
