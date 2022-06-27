@@ -10,6 +10,7 @@ app.use(cors())
 
 app.get('/store', Store);
 app.get('/store/:productId', Store);
+// app.get('/', user, shoppingCart)
 
 
 
