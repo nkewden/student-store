@@ -14,11 +14,8 @@ https://user-images.githubusercontent.com/99931474/175128140-dec1107d-b6a7-43bc-
 ### Week 3 Gif
 
 
-https://user-images.githubusercontent.com/99931474/175698169-903a0cb8-ed5c-4ed7-97f3-f30b47415818.mp4
 
-
-
-### Week 3 Gif
+https://user-images.githubusercontent.com/99931474/175968361-bd356eca-395d-4683-b61c-7b6bbee49a3b.mp4
 
 
 
