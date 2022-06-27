@@ -35,7 +35,7 @@ https://user-images.githubusercontent.com/99931474/175968361-bd356eca-395d-4683-
 - [x] User can click to expand the shopping cart in the left navigation.
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
-- [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
