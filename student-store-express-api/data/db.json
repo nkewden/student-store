@@ -145,5 +145,180 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "sdfd",
+      "email": "sdfd@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "total": 3.534375,
+      "createAt": "2022-06-28T06:38:08.706Z"
+    },
+    {
+      "id": 2,
+      "name": "sdfd",
+      "email": "sdfd@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "total": 3.534375,
+      "createAt": "2022-06-28T06:40:15.701Z"
+    },
+    {
+      "id": 3,
+      "name": "sdfd",
+      "email": "sdfd@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 1
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 19.846875,
+      "createAt": "2022-06-28T06:41:52.682Z"
+    },
+    {
+      "id": 4,
+      "name": "rd",
+      "email": "dsg@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 1
+        },
+        {
+          "itemId": 5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.690625,
+      "createAt": "2022-06-28T06:57:10.979Z"
+    },
+    {
+      "id": 5,
+      "name": "sdsd",
+      "email": "sds@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "total": 3.534375,
+      "createAt": "2022-06-28T07:00:09.221Z"
+    },
+    {
+      "id": 6,
+      "name": "fdfg",
+      "email": "dfgf@gmail.com",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "total": 6.7860000000000005,
+      "createAt": "2022-06-28T07:00:53.541Z"
+    },
+    {
+      "id": 7,
+      "name": "fdd",
+      "email": "fdf@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 1
+        },
+        {
+          "itemId": 9,
+          "quantity": 1
+        }
+      ],
+      "total": 13.582875,
+      "createAt": "2022-06-28T14:35:14.807Z"
+    },
+    {
+      "id": 8,
+      "name": "abdi",
+      "email": "abdi@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 1
+        },
+        {
+          "itemId": 9,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": 20.368875,
+      "createAt": "2022-06-28T14:37:14.331Z"
+    },
+    {
+      "id": 9,
+      "name": "abdi",
+      "email": "abdi@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 1
+        },
+        {
+          "itemId": 9,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": 20.368875,
+      "createAt": "2022-06-28T14:37:15.426Z"
+    },
+    {
+      "id": 10,
+      "name": "fadumo",
+      "email": "fadumo@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 2
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 23.38125,
+      "createAt": "2022-06-28T14:38:10.678Z"
+    }
+  ]
 }

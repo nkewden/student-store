@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react"
 import axios from 'axios'
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
+import CheckoutForm from "../CheckoutForm/CheckoutForm"
 
 
 
@@ -19,8 +20,9 @@ export default function App() {
   const [error, setError] = React.useState("");
   const [isOpen, setIsOpen] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([{itemId: 0, quantity: 0}]);
-  const [checkoutForm, submitCheckoutForm] = React.useState({});
+  const [checkoutForm, setCheckoutForm] = React.useState({email:"", name:""});
   const [event, setEvent] = useState({})
+  const [receipt, setReceipt] = useState(false)
 
 
   const handleOnToggle = () => {
@@ -30,6 +32,7 @@ export default function App() {
       setIsOpen(true)
     }
   }
+
 
 
   function handleAddItemToCart (productId) {
@@ -83,18 +86,38 @@ export default function App() {
 
   }
 
-  const handleOnCheckoutFormChange = (name, value) => {
-    setCheckoutForm({ name, value });
+  const handleOnCheckoutFormChange = (e) => {
+    if (e.target.name === "email") {
+      let name = checkoutForm.name;
+      setCheckoutForm({email: e.target.value, name: name});
+    } else {
+      let email =checkoutForm.email
+      setCheckoutForm({email: email, name: e.target.value})
+    }
+    
   }
 
-  const handleOnSubmitCheckoutForm = () => {
-    axios.post("http://localhost:3001/store", {
-      user: { name: checkoutForm.name, email: checkoutForm.value }, shoppingCart
-    })
-      .then(function (response) {
-      })
-      .catch(function (error) {
-      })
+
+
+  async function handleOnSubmitCheckoutForm() {
+    let cart = []
+    shoppingCart.map((e) => {
+      if (e.itemId != 0) {
+        cart.push(e)
+      }
+    }) 
+    let object = {}
+    if (checkoutForm.name != "" && checkoutForm.email != "") {
+        object = {email: checkoutForm.email, name: checkoutForm.name}
+    }
+    const request = async () => {await axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart: cart})
+      .then((response) => {
+        setReceipt(true)
+      }) 
+      .catch((error) => {
+        console.log(error)
+      })}
+      request()
   }
 
 
@@ -127,7 +150,7 @@ export default function App() {
                 <>
                   <Navbar />
                   <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart}/>
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products} shoppingCart={shoppingCart}/>
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products} shoppingCart={shoppingCart} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} receipt={receipt} setReceipt={setReceipt}/>
                 </>
               )}
               />
@@ -135,14 +158,14 @@ export default function App() {
                 <>
                   <Navbar />
                   <ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart}/>
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products} shoppingCart={shoppingCart}/>
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} products={products} shoppingCart={shoppingCart} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} receipt={receipt} setReceipt={setReceipt}/>
                 </>
               )}
               />
               <Route path="*" element={(
                 <>
                   <Navbar />
-                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} shoppingCart={shoppingCart}/>
+                  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} handleOnToggle={handleOnToggle} checkoutForm={checkoutForm} shoppingCart={shoppingCart} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} receipt={receipt} setReceipt={setReceipt}/>
                 </>
               )}
               />

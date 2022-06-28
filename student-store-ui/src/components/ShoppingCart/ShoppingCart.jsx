@@ -54,7 +54,7 @@ props.shoppingCart.map((e) => {
 
 total = (subtotal * .0875) + subtotal
 
-console.log(13, total)
+
 
 
   return (
@@ -93,7 +93,9 @@ console.log(13, total)
         <h3>Total</h3>
             <h3>{total.toFixed(2)}</h3>
         </div>
+        
         </div>
+        
     </div>
   );
 }

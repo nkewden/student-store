@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const Store = require('./routes/Store')
+const Store = require("./routes/store")
 const cors = require("cors")
 
 const app = express();
@@ -10,7 +10,7 @@ app.use(cors())
 
 app.get('/store', Store);
 app.get('/store/:productId', Store);
-// app.get('/', user, shoppingCart)
+app.use("/", Store)
 
 
 

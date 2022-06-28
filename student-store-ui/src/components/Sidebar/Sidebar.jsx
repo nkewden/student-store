@@ -3,6 +3,8 @@ import "./Sidebar.css"
 import { BsFillArrowRightCircleFill, BsFillCartPlusFill, BsFillArrowLeftCircleFill, BsFillInfoCircleFill } from "react-icons/bs"
 import { MdPayment } from "react-icons/md"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
+import CheckForm from "../CheckoutForm/CheckoutForm"
+import Receipt from "../Receipt/Receipt"
 
 export default function Sidebar(props) {
   const handleOnClick = (event) => {
@@ -38,6 +40,12 @@ export default function Sidebar(props) {
                 <i className="material-icons" onClick={handleOnClick}><BsFillInfoCircleFill /></i>
               </span>
             </div>}
+            <CheckForm isOpen={props.isOpen} 
+        shoppingCart={props.shoppingCart} 
+        checkoutForm={props.checkoutForm} 
+        handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} 
+        handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}/>
+        <Receipt receipt={props.receipt} setReceipt={props.setReceipt}/>
         </div>
       </div>
     </section>
