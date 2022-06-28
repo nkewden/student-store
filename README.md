@@ -14,11 +14,8 @@ https://user-images.githubusercontent.com/99931474/175128140-dec1107d-b6a7-43bc-
 ### Week 3 Gif
 
 
-https://user-images.githubusercontent.com/99931474/175698169-903a0cb8-ed5c-4ed7-97f3-f30b47415818.mp4
 
-
-
-### Week 3 Gif
+https://user-images.githubusercontent.com/99931474/175968361-bd356eca-395d-4683-b61c-7b6bbee49a3b.mp4
 
 
 
@@ -38,7 +35,7 @@ https://user-images.githubusercontent.com/99931474/175698169-903a0cb8-ed5c-4ed7-
 - [x] User can click to expand the shopping cart in the left navigation.
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
-- [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
